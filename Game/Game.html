@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body background="WoodenBackground.png" height="655" width="1348" >
+    <audio id="music" src="song.mp3" autoplay loop></audio>
+    <button class="users" type="button">
+    <button class="opt" type="button" onclick="getOptions()">
+    <button class="music" id="musicBtn" type="button" style="display: none" onclick="ison = getMusic(ison)">
+    <button class="infobutton" id="infoBtn" type="button" style="display: none">
+    <button type="button" class="game1button" onmouseover="displayInfo(2)" onmouseleave="displayInfo(0)"></button>
+    <button type="button" class="game2button" onmouseover="displayInfo(1)" onmouseleave="displayInfo(0)"></button>
+    <button type="button" class="game3button" onmouseover="displayInfo(3)" onmouseleave="displayInfo(0)"></button>
+    <button type="button" class="infotext" id="infotext"></button>
+        <div class="choosediv">
+            <img src="choose_a_game_small.png">
+        </div>
+<script>
+    let infotext = '';
+    function getOptions() {
+        let m = document.getElementById("musicBtn");
+        let i = document.getElementById("infoBtn");
+        if (m.style.display === "none") {
+            m.style.display = "block";
+        } else {
+            m.style.display = "none";
+        }
+        if (i.style.display === "none") {
+            i.style.display = "block";
+        } else {
+            i.style.display = "none";
+        }
+    }
+    let ison = "on";
+
+    function getMusic(audiostatus) {
+        let getaudio = document.getElementById('music');
+        if (audiostatus === 'off') {
+            getaudio.load();
+            getaudio.play();
+            audiostatus = 'on';
+        } else if (audiostatus === 'on') {
+            getaudio.pause();
+            audiostatus = 'off';
+        }
+        return audiostatus
+    }
+
+    function displayInfo(n) {
+        if(n === 1){
+            infotext = "InfoText1";
+        }
+        else if(n === 2){
+            infotext = "InfoText2";
+        }
+        else if(n === 3){
+            infotext = "InfoText3";
+        }
+        else {
+            infotext = '';
+        }
+        document.getElementById('infotext').innerHTML = infotext;
+    }
+</script>
+</body>
+</html>
