@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameKit</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+</head>
+<body  >
+<audio id="music" src="../public/images/song.mp3" autoplay loop></audio>
+<button class="users" type="button"></button>
+    <button class="opt" type="button" onclick="getOptions()"></button>
+        <button class="music" id="musicBtn" type="button" style="display: none" onclick="ison = getMusic(ison)"></button>
+            <button class="infobutton" id="infoBtn" type="button" style="display: none"></button>
+                <button type="button" class="game1button" onmouseover="displayInfo(2)" onmouseleave="displayInfo(0)"></button>
+                <button type="button" class="game2button" onmouseover="displayInfo(1)" onmouseleave="displayInfo(0)"></button>
+                <button type="button" class="game3button" onmouseover="displayInfo(3)" onmouseleave="displayInfo(0)"></button>
+                <button type="button" class="infotext" id="infotext" style="display: none"></button>
+                <div class="choosediv">
+                    <img src="../public/images/clear.png">
+                </div>
+                <script>
+                    let infotext = '';
+                    function getOptions() {
+                        let m = document.getElementById("musicBtn");
+                        let i = document.getElementById("infoBtn");
+                        if (m.style.display === "none") {
+                            m.style.display = "block";
+                        } else {
+                            m.style.display = "none";
+                        }
+                        if (i.style.display === "none") {
+                            i.style.display = "block";
+                        } else {
+                            i.style.display = "none";
+                        }
+                    }
+                    let ison = "on";
+
+                    function getMusic(audiostatus) {
+                        let getaudio = document.getElementById('music');
+                        if (audiostatus === 'off') {
+                            getaudio.load();
+                            getaudio.play();
+                            audiostatus = 'on';
+                        } else if (audiostatus === 'on') {
+                            getaudio.pause();
+                            audiostatus = 'off';
+                        }
+                        return audiostatus
+                    }
+
+                    function displayInfo(n) {
+                        if(n === 1){
+                            document.getElementById('infotext').style.display = true;
+                            infotext = "InfoText1";
+                        }
+                        else if(n === 2){
+                            document.getElementById('infotext').style.display = true;
+                            infotext = "InfoText2";
+                        }
+                        else if(n === 3){
+                            document.getElementById('infotext').style.display = true;
+                            infotext = "InfoText3";
+                        }
+                        else {
+                            document.getElementById('infotext').style.display = none;
+                            infotext = '';
+                        }
+                        document.getElementById('infotext').innerHTML = infotext;
+                    }
+                </script>
+</body>
+</html>

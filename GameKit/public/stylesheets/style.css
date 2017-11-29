@@ -1,0 +1,110 @@
+button{
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    box-shadow: 0 5px #be780a;
+    border-color: #be780a;
+    border-radius: 5px;
+    height: 37px;
+    width: 37px;
+}
+
+body{
+    background-image: url("../images/WoodenBackground.png");
+    height: 655px;
+    width: 1348px;
+
+}
+
+.choosediv{
+    position: absolute;
+    top: 100px;
+    left: 320px;
+}
+
+.infotext{
+    background-image: url("../images/WoodenBackground.png");
+    outline: none;
+    position: absolute;
+    height: 150px;
+    width: 600px;
+    top: 525px;
+    pointer-events: none;
+    box-shadow: none;
+    left: 375px;
+    border-color: #be780a;
+    border-radius: 7px;
+}
+
+.game1button{
+    background-image: url("../images/field.jpg");
+    width: 20%;
+    height: 43%;
+    border-radius: 15px;
+    position: absolute; /* or absolute */
+    top: 30%;
+    left: 40%;
+}
+
+.game2button{
+    background-image: url("../images/field.jpg");
+    width: 20%;
+    height: 43%;
+    border-radius: 15px;
+    position: absolute; /* or absolute */
+    top: 30%;
+    left: 15%;
+}
+
+.game3button{
+    background-image: url("../images/field.jpg");
+    width: 20%;
+    height: 43%;
+    border-radius: 15px;
+    position: absolute; /* or absolute */
+    top: 30%;
+    left: 65%;
+}
+
+#optSpan{
+    width: 20px;
+    height: 30px;
+    padding: 10px 10px;
+    text-align: center;
+    background-image: url("../images/WoodenBackground.png");
+    border-color: #be780a;
+    margin-top: 50px;
+}
+
+.music{
+    position: absolute;
+    top: 10%;
+    left: 1300px;
+    background-image:  url("../images/WoodenBackground.png");
+}
+
+.infobutton{
+    position: absolute;
+    top: 19%;
+    left: 1300px;
+    background-image:  url(../images/WoodenBackground.png);
+}
+
+.opt{
+    /* to add gear image */
+    position: absolute;
+    top: 1%;
+    left: 1300px;
+    background-image:  url(../images/background+optionGear.png);
+}
+
+button:active{
+    /* to add darker background */
+    box-shadow: 0 3px #be780a;
+}
+
+.users{
+    position: absolute;
+    left: 33px;
+    background-image:  url(../images/WoodenBackground.png);
+}
